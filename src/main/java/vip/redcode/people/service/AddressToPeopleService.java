@@ -1,4 +1,22 @@
 package vip.redcode.people.service;
 
-public class AddressToPeople {
+import org.springframework.http.ResponseEntity;
+import vip.redcode.people.model.AddressToPeople;
+
+import java.util.List;
+import java.util.UUID;
+
+public interface AddressToPeopleService {
+
+    ResponseEntity<List<AddressToPeople>> findAll();
+
+    ResponseEntity<AddressToPeople> findById(UUID id);
+
+    ResponseEntity<AddressToPeople> save(AddressToPeople addressToPeople);
+
+    ResponseEntity<AddressToPeople> putSave(UUID id, AddressToPeople addressToPeople);
+
+    ResponseEntity<AddressToPeople> patchSave(UUID id, AddressToPeople addressToPeople);
+
+    ResponseEntity<AddressToPeople> deleteById(UUID id);
 }
